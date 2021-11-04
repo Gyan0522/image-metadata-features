@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.challenge.feature.controller.FeatureControllerTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 2.353 s <<< FAILURE! - in com.challenge.feature.controller.FeatureControllerTest
+listAllFeaturesTest(com.challenge.feature.controller.FeatureControllerTest)  Time elapsed: 0.028 s  <<< FAILURE!
+java.lang.AssertionError: expected:<14> but was:<6>
+	at com.challenge.feature.controller.FeatureControllerTest.listAllFeaturesTest(FeatureControllerTest.java:31)
+

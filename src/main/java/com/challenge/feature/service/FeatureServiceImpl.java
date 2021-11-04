@@ -1,0 +1,43 @@
+package com.challenge.feature.service;
+
+import java.util.Collection;
+import java.util.Map;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.challenge.feature.exception.FeatureNotFoundException;
+import com.challenge.feature.jsonobject.Feature;
+
+/**
+ * This service component is reponsible for handling the mapped features from the JSON file.
+ */
+@Service
+public class FeatureServiceImpl implements IFeatureService {
+
+	@Autowired
+	private Map<String, Feature> featureMapping;
+	
+	/**
+	 * Return all features.
+	 * 
+	 * @return Collection<Feature>
+	 */
+	public Collection<Feature> findAllFeatures() {
+		return featureMapping.values();
+	}
+	
+	/**
+	 * Find a feature by its ID.
+	 * 
+	 * @param id
+	 * @exception FeatureNotFoundException - if the ID param doesn't match any mapped feature
+	 * @return Feature
+	 */
+	public Feature findFeatureById(String id) {
+		Optional<Feature> feature = Optional.ofNullable(featureMapping.get(id));
+		return feature.map((obj) -> { return obj; })
+				.orElseThrow(() -> new FeatureNotFoundException(id));
+	}
+}
