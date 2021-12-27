@@ -8,8 +8,7 @@ Clone Repo : git clone https://github.com/Gyan0522/image-metadata-features.git
 
 Traverse to image-metadata-features folder in local system using terminal
 
-Run Springboot application : ./mvnw spring-boot:run 
-
+Run Springboot application : ./mvnw spring-boot:run (run command  "mvn -N io.takari:maven:wrapper" if ./mvnw: No such file or directory error)
 ### Execute the Endpoints (using post man)
 
 1.  http://localhost:8080/features
